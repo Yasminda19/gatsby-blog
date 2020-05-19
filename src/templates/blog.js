@@ -1,63 +1,43 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import SEO from "../components/seo"
-import PropTypes from "prop-types"
+import { graphql } from "gatsby"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+
 import Layout from "../components/layout"
-
-import blogStyles from "../pages/blog.module.scss"
-import Pager from "../components/paginator"
-import Kategori from "../components/kategori"
-
-const Blog = ({ data, pageContext }) => {
-  return (
-    <Layout>
-      <SEO title="Blog Posts" />
-      <div className="h1 text-center"> Kabar Terkini</div>
-      <ol className={blogStyles.posts}>
-        {data.allContentfulBlogPost.edges.map(edge => {
-          return (
-            <li className={blogStyles.post}>
-              <Link to={`/kabarterkini/${edge.node.slug}`}>
-                <h2>{edge.node.title}</h2>
-                <p>{edge.node.publishedDate}</p>
-              </Link>
-            </li>
-          )
-        })}
-      </ol>
-      <Pager pageContext={pageContext} />
-
-      <Kategori />
-    </Layout>
-  )
-}
-
-Blog.propTypes = {
-  data: PropTypes.object.isRequired,
-  pageContext: PropTypes.object.isRequired,
-}
+import Head from "../components/head"
 
 export const query = graphql`
-  query($skip: Int, $limit: Int) {
-    allContentfulBlogPost(
-      sort: { fields: title, order: DESC }
-      skip: $skip
-      limit: $limit
-    ) {
-      edges {
-        node {
-          id
-          title
-          slug
-          publishedDate(formatString: "MMMM Do, YYYY")
-          gambarArtikel {
-            file {
-              url
-            }
-          }
-        }
+  query($slug: String!) {
+    contentfulBlogPost(slug: { eq: $slug }) {
+      title
+      publishedDate(formatString: "MMMM Do, YYYY")
+      body {
+        json
       }
     }
   }
 `
+
+const Blog = props => {
+  const options = {
+    renderNode: {
+      "embedded-asset-block": node => {
+        const alt = node.data.target.fields.title["en-US"]
+        const url = node.data.target.fields.file["en-US"].url
+        return <img alt={alt} src={url} />
+      },
+    },
+  }
+  return (
+    <Layout>
+      <Head title={props.data.contentfulBlogPost.title} />
+      <h1>{props.data.contentfulBlogPost.title}</h1>
+      <p>{props.data.contentfulBlogPost.publishedDate}</p>
+      {documentToReactComponents(
+        props.data.contentfulBlogPost.body.json,
+        options
+      )}
+    </Layout>
+  )
+}
+
 export default Blog
