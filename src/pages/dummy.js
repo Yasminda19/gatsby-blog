@@ -12,6 +12,7 @@ import {
 import Layout from "../components/layout"
 import Jumbo from "../components/jumbo"
 import Insta from "../components/insta"
+import Kategori from "../components/kategori"
 
 const Dummy = () => {
   return (
@@ -30,12 +31,7 @@ const Dummy = () => {
             className="col-lg-3 col-md-12 col-sm-12"
             style={{ background: "red", color: "white" }}
           >
-            <div
-              className=""
-              style={{
-                background: "grey",
-              }}
-            >
+            <div>
               <h1
                 className=""
                 style={{
@@ -47,21 +43,23 @@ const Dummy = () => {
             </div>
 
             <div
-              className=""
-              style={{
-                background: "grey",
-              }}
+              className=" mb-2"
+              
             >
               {/* instagramnya belom bener */}
+              <Kategori />
+            </div>
+
+              <div
+              className=""
+              style={{
+                background: "yellow",
+              }}
+            >
               <Insta />
             </div>
 
-            <div
-              className=""
-              style={{
-                background: "grey",
-              }}
-            >
+            <div>
               <h1
                 className=""
                 style={{

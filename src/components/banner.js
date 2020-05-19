@@ -1,4 +1,4 @@
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link, useStaticQuery } from "gatsby"
 import React from "react"
 import { Carousel } from "react-bootstrap"
 
@@ -20,11 +20,11 @@ const Banner = () => {
     }
   `)
   return (
-    <Carousel className="col-lg-12 col-md-12 col-sm-12">
+    <Carousel className="col-lg-12 col-md-12 col-sm-12 px-0">
       {data.allContentfulBannerBeranda.edges.map(edge => {
         return (
           <Carousel.Item
-            style={{ background: "#004547" }}
+            style={{ background: "#005131" }}
             className="pt-4 pb-5 text-center"
           >
             <div
@@ -40,10 +40,11 @@ const Banner = () => {
               <div className="row align-items-center">
                 <div className="col-lg-5 col-md-12 col-sm-12">
                   <div
-                    className="vw-auto h1 text-center pb-2"
+                    className="vw-auto text-center pb-2"
                     style={{
                       fontWeight: "bold",
                       color: "white",
+                      fontSize: "4vw",
                     }}
                   >
                     {edge.node.teks}
