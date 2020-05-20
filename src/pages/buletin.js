@@ -8,7 +8,7 @@ import Jumbo from "../components/jumbo"
 const BuletinPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulbuletin( sort: { fields: createdAt, order: DESC } ) {
+      allContentfulBuletin( sort: { fields: createdAt, order: DESC } ) {
         edges {
           node {
             title
