@@ -107,6 +107,12 @@ const Header = () => {
                   Annual Report
                 </Link>
               </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item>
+                <Link to="/buletin" className={headerStyles.dropdownContent}>
+                  Buletin
+                </Link>
+              </NavDropdown.Item>
             </NavDropdown>
 
             <Nav.Link>
