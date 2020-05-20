@@ -15,7 +15,7 @@ const PageFasilitas = () => {
             namaFasilitas
             gambarFasilitas{
               file{url
-
+                
             }
           }
         }
@@ -32,7 +32,7 @@ const PageFasilitas = () => {
         }
       }
     }
-
+    
   }
   `)
 
@@ -53,7 +53,7 @@ const PageFasilitas = () => {
           </div>
           <div className="display-4">SMP CENDEKIA BAZNAS</div>
         </div>
-      </div>
+      </div>    
         <div className="container">
         <div className="row">
         {data.allContentfulFasilitasScb.edges.map(edge => {
@@ -62,7 +62,8 @@ const PageFasilitas = () => {
                 <div className="card" >
                   <img className="card-img-top" src={edge.node.gambarFasilitas.file.url} object-fit="scale-down" height="350vh"></img>
                     <div className="card-body">
-                       <h5 className="card-title-center">{edge.node.namaFasilitas}</h5>
+                       <h5 className="card-title-center text-center">{edge.node.namaFasilitas}</h5>
+
                     </div>
                 </div>
               </div>

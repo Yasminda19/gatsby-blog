@@ -15,7 +15,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: "Sekolah Cendekia Baznas",
-    author: "Tim Ilmu Komputer 54",
+    author: "Tim Ilmu Komputer IPB 54",
     description: "Website Resmi Sekolah Cendekia Baznas",
   },
   /* Your site config here */
@@ -76,14 +76,14 @@ module.exports = {
     {
       resolve: "gatsby-source-instagram",
       options: {
-        username: "ahmadscb2019",
+        username: "avrientanep",
       },
     },
     {
       resolve: "gatsby-source-instagram",
       options: {
         type: `user-profile`,
-        username: "ahmadscb2019",
+        username: "avrientanep",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -31,8 +31,7 @@
 .selengkapnya:hover,
 .selengkapnya:active,
 .selengkapnya:focus {
-  color: #005131;
-  font-weight: bold;
+  color: #004547;
   text-decoration: none;
 }
 
@@ -50,4 +49,18 @@
   text-decoration: none !important;
   color: #ffffff;
   list-style: none;
+}
+
+.tanggal {
+  font-weight: bold;
+  color: #004547;
+  text-decoration: none;
+}
+
+.tanggal:hover,
+.tanggal:active,
+.tanggal:focus {
+  font-weight: bold;
+  color: #004547;
+  text-decoration: none;
 }

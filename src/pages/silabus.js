@@ -18,8 +18,8 @@ const SilabusPage = () => {
         }
       }
     }
-    
-  
+
+
   `)
   return (
     <div>
