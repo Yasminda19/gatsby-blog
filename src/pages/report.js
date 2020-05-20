@@ -35,8 +35,7 @@ const ReportPage = () => {
       }
     }
   `)
-
-=======
+  
   query {
     contentfulJumbotronHalaman(
       jumbotronHalaman: { eq: "Halaman Annual Report" }
